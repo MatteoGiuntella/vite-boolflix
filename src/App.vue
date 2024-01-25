@@ -19,7 +19,8 @@ export default {
 
     },
     mounted(){
-        axios.get().then((response) =>{
+        axios.get()
+        .then((response) =>{
             console.log(response)
         });
     }
