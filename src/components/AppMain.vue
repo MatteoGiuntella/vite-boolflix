@@ -15,7 +15,14 @@ export default {
 
 <template>
     <main>
-       
+       <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+       </div>
     </main>
 </template>
 
