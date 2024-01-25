@@ -8,17 +8,15 @@ export default {
         };
     },
     methods: {
-        getFlag(){
-            this.ele.original_language = this.ele.original_language.toUpperCase();
-            if (this.ele.original_language == 'EN') {
-                this.ele.original_language = 'GB'
-            }
+        getFlag(stringa){
+           stringa = stringa.toUpperCase()
+           if(stringa == 'EN'){
+            stringa = 'GB'
+           }
         }
         
     },
-    mounted(){
-        this.getFlag()
-    }
+   
 }
 </script>
 
@@ -26,13 +24,13 @@ export default {
     <main>
        <div class="container">
         <h2>Film</h2>
-            <ul v-for="(ele) in store.movies">
-                <li>Title: {{ ele.title }} </li>
-                <li>Original title: {{ ele.original_title }} </li>
-                <li>Vote: {{ ele.vote_average }} </li>
-                <li>Original language: {{ ele.original_language }} </li>
-                <li>Overview: {{ ele.overview }} </li>
-                <img :src="'https://flagsapi.com/'+ ele.original_language + '/flat/64.png'" alt="">
+            <ul v-for="(elem) in store.movies">
+                <li>Title: {{ elem.title }} </li>
+                <li>Original title: {{ elem.original_title }} </li>
+                <li>Vote: {{ elem.vote_average }} </li>
+                <li>Original language: {{ elem.original_language }} </li>
+                <li>Overview: {{ elem.overview }} </li>
+                <img :src="'https://flagsapi.com/'+ getFlag(elem.original_language) + '/flat/64.png'" alt="">
             </ul>
         <h2>Serie</h2>
             <ul v-for="(elem) in store.series">
