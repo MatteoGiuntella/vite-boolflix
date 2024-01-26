@@ -38,6 +38,9 @@ export default {
 </script>
 
 <template>
+    <div class="imgContainer">
+        <img :src="'https://image.tmdb.org/t/p/w342/'+ this.objfilm.poster_path" :alt="this.objfilm.poster_path">
+    </div>
     <h5>Title: {{ title }} </h5>
     <h4>Original title: {{ originalTitle }} </h4>
     <h4>Vote: {{ vote }} </h4>
@@ -47,5 +50,8 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.imgContainer{
+    width: 50px;
+    height: 150px;
+}
 </style>
