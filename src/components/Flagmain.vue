@@ -10,7 +10,6 @@ export default {
     props: {
         title : String,
         originalTitle : String,
-        vote : Number,
         originalLanguage : String,
         overview : String,
         objfilm : Object,
@@ -28,10 +27,20 @@ export default {
                 this.objfilm.original_language = 'KR'
             }
             console.log(this.objfilm.original_language)
+        },
+        decimalvote(){
+            this.objfilm.vote_average = Math.round(this.objfilm.vote_average / 2)
+
+            console.log(this.objfilm.vote_average)
         }
+    },
+    update(){
+        this.flagfilm()
+        this.decimalvote()
     },
     mounted(){
         this.flagfilm()
+        this.decimalvote()
     }
    
 }
@@ -41,9 +50,9 @@ export default {
     <div class="imgContainer">
         <img :src="'https://image.tmdb.org/t/p/w342/'+ this.objfilm.poster_path" :alt="this.objfilm.poster_path">
     </div>
-    <h5>Title: {{ title }} </h5>
+    <h3>Title: {{ title }} </h3>
     <h4>Original title: {{ originalTitle }} </h4>
-    <h4>Vote: {{ vote }} </h4>
+    <h4>Vote: {{ objfilm.vote_average }} <i v-for="(elem,i) in 5" :key="i"  class="fa-solid fa-star fullstar" :class="{blackflag: objfilm.vote_average <= i}"></i></h4>
     <span>Original language: <img :src="'https://flagsapi.com/'+ objfilm.original_language + '/flat/64.png'" :alt="objfilm.original_language"> </span>
     <p>Overview: {{ overview }} </p>
 </template>
@@ -53,5 +62,11 @@ export default {
 .imgContainer{
     width: 50px;
     height: 150px;
+}
+.fullstar{
+    color: yellow;
+}
+.blackflag{
+    color: black;
 }
 </style>

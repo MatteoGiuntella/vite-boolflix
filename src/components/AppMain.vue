@@ -27,7 +27,6 @@ export default {
                         <Flagmain
                         :title=" elem.title" 
                         :originalTitle="elem.original_title "
-                        :vote="elem.vote_average "
                         :overview="elem.overview"
                         :objfilm="elem"
                         />
@@ -41,7 +40,6 @@ export default {
                         <Flagmain
                         :title=" elem.name" 
                         :originalTitle="elem.original_name "
-                        :vote="elem.vote_average "
                         :overview="elem.overview"
                         :objfilm="elem"
                         />
