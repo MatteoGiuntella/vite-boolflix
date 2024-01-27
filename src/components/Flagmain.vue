@@ -85,15 +85,17 @@ export default {
         position: absolute;
         top: 0%;
         left: 0%;
-        &:hover{
-            display: block;
-            border: 1px solid #E30913;
-        }
+       
         span{
             .flag{
                 display: inline-block;
             }
         }
+   
+    }
+    &:hover{
+        display: block;
+        border: 1px solid #E30913;
     }
 
 }
