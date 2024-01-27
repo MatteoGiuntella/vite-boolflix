@@ -64,20 +64,23 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-    max-width: 342px;
+    max-width: 341px;
     min-height: 474px;
     border: 0px solid black;
     background-color: black;
     position: relative;
-    .imgContainer{
-       width: 100%;
-       border: 0px solid black;
-       border-radius: 20px; 
-       display: block;
+    .box-poster{
+        // display: block;
+        .imgContainer{
+         width: 100%;
+         border: 0px solid black;
+        border-radius: 20px; 
     }
-    &:hover{
-        display: none;
     }
+    &:hover .box-information{
+        display: block;
+    }
+    
     .box-information{
         display: none;
         color: white;
@@ -85,6 +88,9 @@ export default {
         position: absolute;
         top: 0%;
         left: 0%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
        
         span{
             .flag{
