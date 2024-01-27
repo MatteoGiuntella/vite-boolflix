@@ -61,13 +61,15 @@ export default {
 <style lang="scss" scoped>
 .search-bar{
     padding: 20px;
-}
-.container-img {
-  width: 200px;
-  height: 50%;
-  img {
-    height: 50px;
-    width: 100%;
+    border: 1px solid #E30913;
+    .container-img {
+       width: 200px;
+      height: 50%;
+    img {
+      height: 50px;
+      width: 100%;
+    }
   }
 }
+
 </style>
