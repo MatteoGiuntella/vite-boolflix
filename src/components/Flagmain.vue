@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-    max-width: 341px;
+    // max-width: 341px;
     min-height: 474px;
     border: 0px solid black;
     background-color: black;
